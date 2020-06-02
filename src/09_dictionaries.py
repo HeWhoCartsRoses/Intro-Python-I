@@ -14,34 +14,41 @@ has the following keys:
  - lon: a signed integer representing a longitude value
  - name: a name string for this location
 """
-
-waypoints = [
-    {
+waypoints = {
+    1: {
         "lat": 43,
         "lon": -121,
         "name": "a place"
     },
-    {
+    2: {
         "lat": 41,
         "lon": -123,
         "name": "another place"
     },
-    {
+    3: {
         "lat": 43,
         "lon": -122,
         "name": "a third place"
     }
-]
-
+}
 # Add a new waypoint to the list
 # YOUR CODE HERE
-
+waypoints[4] = {
+    "lat": 48.525,
+    "lon": 123.236,
+    "name": "Point Nemo"
+}
+print(waypoints)
 # Modify the dictionary with name "a place" such that its longitude
 # value is -130 and change its name to "not a real place"
 # Note: It's okay to access the dictionary using bracket notation on the
 # waypoints list.
-
 # YOUR CODE HERE
-
+waypoints[1]["lon"] = 130
+waypoints[1]["name"] = "not a real place"
+print(waypoints)
 # Write a loop that prints out all the field values for all the waypoints
 # YOUR CODE HERE
+for p_id, p_info in waypoints.items():
+    for key in p_info:
+        print(key + ':', p_info[key])
